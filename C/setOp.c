@@ -46,8 +46,9 @@ int main() {
         printf("1. Union\n");
         printf("2. Intersection\n");
         printf("3. Difference (A - B)\n");
-        printf("4. Display Sets\n");
-        printf("5. Exit\n");
+        printf("4. Difference (B - A)\n");
+        printf("5. Display\n");
+        printf("6. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -69,15 +70,20 @@ int main() {
                 printf("Difference (A - B) = ");
                 displaySet(result);
                 break;
-
             case 4:
+                result = setB & ~setA; // Difference B - A
+                printf("Difference (B - A) = ");
+                displaySet(result);
+                break;
+
+            case 5:
                 printf("Set A = ");
                 displaySet(setA);
                 printf("Set B = ");
                 displaySet(setB);
                 break;
 
-            case 5:
+            case 6:
                 exit(0);
 
             default:
@@ -87,3 +93,4 @@ int main() {
 
     return 0;
 }
+
